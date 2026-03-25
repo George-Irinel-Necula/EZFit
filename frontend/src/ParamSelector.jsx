@@ -31,9 +31,9 @@ export default function ParamSelector() {
   return (
     <>
       <div className="flex h-screen items-center justify-center">
-        <div className="lg:w-2/4 w-3/4 flex flex-col md:flex-row gap-4 max-h-128">
+        <div className="lg:w-3/4 w-3/4 flex flex-col lg:flex-row gap-4 items-center">
 
-          <Surface variant="default" className="p-8 rounded-3xl w-full">
+          <Surface variant="default" className="p-8 rounded-3xl w-full h-fit">
             <h1 className="text-3xl font-bold mb-4">Enter data:</h1>
             <Form onSubmit={handleSubmit} className="gap-4 flex flex-col">
               <div className="flex gap-2">
@@ -138,7 +138,7 @@ export default function ParamSelector() {
                     }}/>
                 <FieldError />
               </TextField>
-              <Switch isSelected={advanceMode} onChange={setAdvanceMode}>
+              <div className=""><Switch isSelected={advanceMode} onChange={setAdvanceMode}>
                 <Switch.Control>
                   <Switch.Thumb />
                 </Switch.Control>
@@ -211,7 +211,7 @@ export default function ParamSelector() {
                     }}/>
                   <FieldError />
                 </TextField>
-              </div>
+              </div></div>
               <div className="gap-2 flex w-full">
                 <Button type="submit" className="w-full">
                   Submit
@@ -221,8 +221,8 @@ export default function ParamSelector() {
             </Form>
           </Surface>
           
-          <Surface className={`w-full md:w-3/4 mt-10 md:mt-0 p-8 rounded-3xl flex flex-col max-h-[80vh] ${submitted ? "" : "hidden"}`}>
-            <h1 className="text-2xl mb-2">Diet Plan:</h1>
+          <Surface className={`w-full md:w-full mt-10 md:mt-0 p-8 rounded-3xl flex flex-col max-h-[70vh] ${submitted ? "" : "hidden"}`}>
+            <h1 className="text-3xl font-extrabold mb-2">Diet Plan:</h1>
             <div className="overflow-y-auto flex-1 pr-2 prose dark:prose-invert prose-sm max-w-none"><ReactMarkdown>
 {`
 ## Estimated Daily Intake

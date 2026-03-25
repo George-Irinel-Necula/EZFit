@@ -39,7 +39,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({ className }) => {
       onChange={toggleTheme}
       defaultSelected={theme=="dark"?true:false}
     >
-      <Switch.Control>
+      <Switch.Control className={theme=="light"?"bg-white":""}>
         <Switch.Thumb >
           <SwitchIcon>
             {theme=="dark" ? <IconMoonFilled size={12} /> : <IconSunFilled size={12} />}

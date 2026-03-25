@@ -1,31 +1,30 @@
 import { Button, Separator, Surface } from "@heroui/react";
 import { ThemeSwitch } from "./components/theme-switch";
 import { Dropdown, Avatar, Label } from "@heroui/react";
-import { IconSettings, IconUser, IconDoorEnter,IconChevronDown } from "@tabler/icons-react";
+import { IconSettings, IconUser, IconDoorEnter,IconChevronDown, IconBarbell } from "@tabler/icons-react";
 
 export default function Navbar() {
   return (
     <>
       <Surface
-        variant="ternary"
-        className="w-full h-16 fixed flex items-center justify-center"
+        className="w-full h-16 fixed flex items-center justify-center z-50 bg-black" 
       >
-        <div className="flex items-center justify-between px-6 md:px-0 md:mx-0 w-full md:w-1/2 mx-auto">
+        <div className="flex items-center justify-between px-6 md:px-0 md:mx-0 w-full md:w-3/4 mx-auto">
           <div className="flex items-center gap-4">
             <h1 className="font-bold text-xl">{"<GIN/>"}</h1>
             <Separator variant="secondary"
               orientation="vertical"
               className="w-0.5 m-0.5 h-fill"
             ></Separator>
-            <h1 className="font-bold text-xl">EZFit App</h1>
+            <h1 className="font-bold text-xl flex gap-2 items-center"><IconBarbell></IconBarbell> EZFit App</h1>
           </div>
 
           <div className="flex items-center">
             <ThemeSwitch/>
+            <Button className="hidden"><IconUser/>Log In</Button>
             <Dropdown>
               <Dropdown.Trigger className="rounded-full">
                 <div className="flex items-center gap-2">
-                <Button className="hidden"><IconUser></IconUser>Log In</Button>
                 <Avatar size="sm">
                   <Avatar.Image
                     alt="Junior Garcia"
