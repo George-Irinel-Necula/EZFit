@@ -13,9 +13,11 @@
     "@heroui/react": "3.0.1",
     "@heroui/styles": "3.0.1",
     "@tabler/icons-react": "^3.40.0",
+    "@tailwindcss/typography": "^0.5.19",
     "clsx": "2.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "6.23.0"
   },
   "devDependencies": {

@@ -10,7 +10,7 @@ export default function Navbar() {
         variant="ternary"
         className="w-full h-16 fixed flex items-center justify-center"
       >
-        <div className="flex items-center justify-between px-6 md:mx-0 w-full md:w-1/2 mx-auto">
+        <div className="flex items-center justify-between px-6 md:px-0 md:mx-0 w-full md:w-1/2 mx-auto">
           <div className="flex items-center gap-4">
             <h1 className="font-bold text-xl">{"<GIN/>"}</h1>
             <Separator variant="secondary"
@@ -21,7 +21,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center">
-            <ThemeSwitch></ThemeSwitch>
+            <ThemeSwitch/>
             <Dropdown>
               <Dropdown.Trigger className="rounded-full">
                 <div className="flex items-center gap-2">

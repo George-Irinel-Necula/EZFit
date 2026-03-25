@@ -13,6 +13,8 @@ import {
 } from "@heroui/react";
 import { ThemeSwitch } from "./components/theme-switch";
 import { FormEvent, useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown"
+
 
 export default function ParamSelector() {
   const [advanceMode, setAdvanceMode] = useState(false);
@@ -29,7 +31,7 @@ export default function ParamSelector() {
   return (
     <>
       <div className="flex h-screen items-center justify-center">
-        <div className="lg:w-2/4 w-3/4 flex flex-col md:flex-row gap-4">
+        <div className="lg:w-2/4 w-3/4 flex flex-col md:flex-row gap-4 max-h-128">
 
           <Surface variant="default" className="p-8 rounded-3xl w-full">
             <h1 className="text-3xl font-bold mb-4">Enter data:</h1>
@@ -169,7 +171,7 @@ export default function ParamSelector() {
                   className="w-1/4"
                 >
                   <Label>Carbs</Label>
-                  <Input placeholder="Carbs" min="10" max="500" onChange={(e) => {
+                  <Input placeholder="Carbs(g)" min="10" max="500" onChange={(e) => {
                       setDietParams((prev) => ({
                         ...prev,
                         carbs: e.target.value,
@@ -185,7 +187,7 @@ export default function ParamSelector() {
                   className="w-1/4"
                 >
                   <Label>Protein</Label>
-                  <Input placeholder="Protein" min="55" max="500" onChange={(e) => {
+                  <Input placeholder="Protein(g)" min="55" max="500" onChange={(e) => {
                       setDietParams((prev) => ({
                         ...prev,
                         protein: e.target.value,
@@ -201,7 +203,7 @@ export default function ParamSelector() {
                   className="w-1/4"
                 >
                   <Label>Fat</Label>
-                  <Input placeholder="Protein" min="10" max="100" onChange={(e) => {
+                  <Input placeholder="Fat(g)" min="10" max="100" onChange={(e) => {
                       setDietParams((prev) => ({
                         ...prev,
                         fats: e.target.value,
@@ -219,8 +221,73 @@ export default function ParamSelector() {
             </Form>
           </Surface>
           
-          <Surface className={`w-full md:w-3/4 mt-10 md:mt-0 p-8 rounded-3xl ${submitted?"":"hidden"}`}>
-            <h1 className="text-2xl">Diet Plan:</h1>
+          <Surface className={`w-full md:w-3/4 mt-10 md:mt-0 p-8 rounded-3xl flex flex-col max-h-[80vh] ${submitted ? "" : "hidden"}`}>
+            <h1 className="text-2xl mb-2">Diet Plan:</h1>
+            <div className="overflow-y-auto flex-1 pr-2 prose dark:prose-invert prose-sm max-w-none"><ReactMarkdown>
+{`
+## Estimated Daily Intake
+- Calories: ~2,400 kcal  
+- Protein: ~160 g  
+- Carbs: ~260 g  
+- Fats: ~80 g  
+
+---
+
+## 3-Meal Diet Plan (Gluten-Free, Chicken-Based)
+
+### Meal 1 – Breakfast (~700 kcal)
+- 4 whole eggs  
+- 200 g boiled potatoes  
+- 1 banana  
+- 20 g peanut butter  
+
+**Macros:**
+- Protein: ~35 g  
+- Carbs: ~65 g  
+- Fats: ~35 g  
+
+---
+
+### Meal 2 – Lunch (~850 kcal)
+- 200 g grilled chicken breast  
+- 150 g cooked rice  
+- 100 g vegetables (broccoli, carrots)  
+- 10 g olive oil  
+
+**Macros:**
+- Protein: ~60 g  
+- Carbs: ~90 g  
+- Fats: ~20 g  
+
+---
+
+### Meal 3 – Dinner (~850 kcal)
+- 180 g grilled chicken (breast or thigh)  
+- 200 g potatoes or rice  
+- 150 g yogurt (gluten-free)  
+- 10 g olive oil  
+
+**Macros:**
+- Protein: ~60 g  
+- Carbs: ~80 g  
+- Fats: ~25 g  
+
+---
+
+## Daily Total
+- Calories: ~2,400 kcal  
+- Protein: ~150–170 g  
+- Carbs: ~230–260 g  
+- Fats: ~70–80 g  
+
+---
+
+## Notes
+- All foods are naturally gluten-free (avoid processed sauces unless labeled gluten-free).  
+- You can rotate rice, potatoes, and corn for carb variety.  
+- Chicken can be swapped between breast (leaner) and thighs (higher fat).  
+`}
+</ReactMarkdown></div>
           </Surface>
         </div>
       </div>
