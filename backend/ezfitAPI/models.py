@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class DietPlans(models.Model):
     title=models.CharField(max_length=255,blank=False,default="Title")
     information=models.CharField(blank=False,default="")
-    date_created=models.DateField(auto_now_add=True)
+    date_created=models.DateTimeField(auto_now_add=True)
     user_id=models.ForeignKey(User,related_name="dietPlan",on_delete=models.CASCADE )
 
     def __str__(self):

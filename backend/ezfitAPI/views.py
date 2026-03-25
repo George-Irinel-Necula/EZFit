@@ -11,8 +11,18 @@ class DietPlanAdminView(generics.ListCreateAPIView):#Arata toate dietplanurile
     queryset=DietPlans.objects.all()
     serializer_class=DietPlanSerializer
     permission_classes=[IsAdminUser]
-
+g
 #Mai fac un view in care daca userul care acceseaza taskul are acelasi username sa poata sa editeze/stearga taskul
+class DietPlanView(generics.RetrieveUpdateDestroyAPIView):
+    queryset=DietPlans.objects.all()
+    serializer_class=DietPlanSerializer
+    permission_classes=[IsAuthenticated]
+
+    def retrieve(self,request,*args,**kwargs):
+
+        return super().retrieve(request,*args,**kwargs)
+
+
 
 class UserDietAdminView(generics.ListCreateAPIView):#Arata toti useri cu toate diet planurile lor
     queryset=User.objects.all()
