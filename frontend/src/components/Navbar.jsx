@@ -1,5 +1,5 @@
 import { Button, Separator, Surface } from "@heroui/react";
-import { ThemeSwitch } from "./components/theme-switch";
+import { ThemeSwitch } from "./theme-switch";
 import { Dropdown, Avatar, Label } from "@heroui/react";
 import { IconSettings, IconUser, IconDoorEnter,IconChevronDown, IconBarbell } from "@tabler/icons-react";
 

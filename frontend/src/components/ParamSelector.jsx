@@ -11,7 +11,7 @@ import {
   ListBox,
   Select,
 } from "@heroui/react";
-import { ThemeSwitch } from "./components/theme-switch";
+import { ThemeSwitch } from "./theme-switch";
 import { FormEvent, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown"
 
